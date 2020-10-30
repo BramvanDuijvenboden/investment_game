@@ -11,5 +11,11 @@ class Exchange:
                   'Royal Dutch Shell':'RDSA', 'RELX':'REN', 'Just Eat Takeaway':'TKWY', 'Unilever':'UNA',
                   'Unibail-Rodamco-Westfield':'URW', 'Wolters Kluwer':'WKL'}
         print(stocks.keys())
+        #choice = input("Choose a company:")
+        #try:
+        #    choice in stock.keys()
+        #except:
+        #    print("Stock not available")
 
-    def stock_price(stock):
+
+    #def stock_price(stock):
