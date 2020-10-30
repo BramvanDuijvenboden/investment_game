@@ -1,4 +1,3 @@
-
 from user import User
 
 # We want to start by defining a class/portfolio
@@ -8,6 +7,11 @@ from user import User
 class Portfolio:
     def __init__(self,user):
         self.name = ("%s's portfolio" % user.name)
+        self.holdings = {}
         print(self.name)
+
+    def overview(self):
+        for holding in self.holdings:
+            print("You hold", self.holdings[holding], "shares in", holding)
 
 

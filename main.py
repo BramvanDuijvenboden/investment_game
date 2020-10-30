@@ -11,7 +11,8 @@ def main():
     user = User(name)
     portfolio = Portfolio(user)
     exchange = Exchange()
-    user.buy(exchange)
+    user.buy(exchange,portfolio)
+    portfolio.overview()
 
 
 if __name__ == "__main__":
