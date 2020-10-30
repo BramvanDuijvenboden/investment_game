@@ -8,6 +8,7 @@ def main():
     portfolio = Portfolio(user)
     print (user)
     print (portfolio)
+    exchange = Exchange()
     print (exchange)
     print (exchange.available_stocks())
 
