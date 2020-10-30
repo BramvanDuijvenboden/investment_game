@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from exchange_bram import Exchange
+from exchange import Exchange
 from portfolio import Portfolio
 from user import User
 
