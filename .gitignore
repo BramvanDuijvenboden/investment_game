@@ -2,4 +2,5 @@ venv
 .idea
 game_env
 requirements_architecture.pptx
+__pycache__
 :
