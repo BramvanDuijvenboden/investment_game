@@ -14,10 +14,8 @@ def main():
     exchange = Exchange()
     print (exchange)
     stock = exchange.available_stocks()
-    #try:
-    #print(exchange.stock_price(stock))
-    #except:
-        #"no price available"
+    print(exchange.stock_price(stock))
+
 
 if __name__ == "__main__":
     main()
