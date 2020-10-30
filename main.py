@@ -6,16 +6,15 @@ from user import User
 
 
 def main():
+    name = "Bram"
     print("Investment Game")
-    user = User()
+    user = User(name)
     portfolio = Portfolio(user)
-    print (user)
-    print (portfolio)
     exchange = Exchange()
-    print (exchange)
-    stock = exchange.available_stocks()
-    print(exchange.stock_price(stock))
+    user.buy(exchange)
 
 
 if __name__ == "__main__":
     main()
+
+

@@ -36,4 +36,4 @@ class Exchange:
 
         df['previous close'] = df['close'].shift(-1)
         df['return'] = ((df['close'] - df['previous close']) / df['previous close']) / 100
-        return df.head(3)
+        return df[0,3]
