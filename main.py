@@ -2,7 +2,7 @@ from user import User
 
 def main():
     print("Investment Game")
-    user = User(input("Enter your username:"))
+    user = User()
     print (user)
 
 
