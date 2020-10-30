@@ -11,5 +11,19 @@ class User:
     def buy(self, exchange):
         print("You have chosen to buy stocks")
         stock = exchange.available_stocks()
-        return exchange.stock_price(stock)
+        price = exchange.stock_price(stock)
+        buy = input(("Would you like to buy", stock, "at", price, "per share? (Y/N)"))
+        if buy=="Y":
+            try:
+                quantity = int(input("How many share would you like to buy?"))
+            except:
+                print("That is not a whole number")
+            if price*quantity > self.balance:
+                print("Insuficient funds")
+            else:
+                print("you have bought", quantity, stock, "shares, at a price of", price, ", at a total amount of", price*quantity)
+                self.balance -= price*quantity
+                print("Your current balance is $", str(self.balance))
+        else:
+            print("You are not buying")
 
