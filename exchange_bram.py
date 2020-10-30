@@ -6,12 +6,13 @@ class Exchange:
         print("Welcome at %s" %self.name)
 
     def available_stocks(self):
-        stocks = {'ABN AMRO Group':'ABN', 'Ahold Delhaize':'AD', 'Adyen':'ADYEN', 'Aegon':'AGN', 'AkzoNobel':'AKZA',
-                  'ASM International':'ASM', 'ASML Holding':'ASML', 'ASR Nederland':'ASRNL', 'DSM':'DSM',
-                  'Galapagos':'GLPG', 'Heineken':'HEIA', 'IMCD':'IMCD', 'ING Group':'INGA', 'KPN':'KPN',
-                  'ArcelorMittal':'MT',	'NN Group':'NN', 'Philips':'PHIA', 'Prosus':'PRX', 'Randstad':'RAND',
-                  'Royal Dutch Shell':'RDSA', 'RELX':'REN', 'Just Eat Takeaway':'TKWY', 'Unilever':'UNA',
-                  'Unibail-Rodamco-Westfield':'URW', 'Wolters Kluwer':'WKL', 'Microsoft': 'MSFT'}
+        stocks = {'Tesla Inc' : 'TSLA',	'Zoom Video Communications Cl A' : 'ZM','Moderna Inc' : 'MRNA',	'Docusign Inc' : 'DOCU',
+                  'Jd.com Inc Ads' : 'JD',	'Nvidia Corp' : 'NVDA',	'Mercadolibre Inc' : 'MELI','Dexcom' : 'DXCM',
+                  'Paypal Holdings' : 'PYPL',	'Adv Micro Devices' : 'AMD',	'Amazon.com Inc' : 'AMZN',	'Apple Inc' : 'AAPL',
+                  'Netease Inc Ads' : 'NTES',	'Lululemon Athletica' : 'LULU',	'Netflix Inc' : 'NFLX',	'Regeneron Pharmaceuticals' : 'REGN',
+                  'Cadence Design Sys' : 'CDNS',	'Synopsys Inc' : 'SNPS',	'Adobe Systems Inc' : 'ADBE',	'Ebay Inc' : 'EBAY',
+                  'Workday Inc' : 'WDAY',	'T-Mobile US' : 'TMUS',	'Splunk Inc' : 'SPLK',	'Idexx Laboratories' : 'IDXX',	'Microsoft Corp' : 'MSFT'}
+
         print(stocks.keys())
         choice = input("Choose a company:")
         try:
