@@ -9,12 +9,13 @@ class Exchange:
         stocks = {'Microsoft Corp' : 'MSFT'}
 
         print(stocks.keys())
-        choice = input("Choose a company:")
-        try:
-            choice in stocks.keys()
-            return stocks[choice]
-        except:
-            print("Stock not available")
+        return 'MSFT' #temporary hard coded to prevent having to give input
+        # choice = input("Choose a company:")
+        # try:
+        #     choice in stocks.keys()
+        #     return stocks[choice]
+        # except:
+        #     print("Stock not available")
 
 
 
@@ -36,4 +37,5 @@ class Exchange:
 
         df['previous close'] = df['close'].shift(-1)
         df['return'] = ((df['close'] - df['previous close']) / df['previous close']) / 100
-        return df.iloc[0]['low']
+        print(df.iloc[0])
+        return df.iloc[0]
