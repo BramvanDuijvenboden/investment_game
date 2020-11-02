@@ -6,6 +6,7 @@ from user import User
 from orderbook import Orderbook
 
 
+
 def main():
     name = "Bram"
     print("Investment Game")
@@ -14,9 +15,13 @@ def main():
     orderbook=Orderbook(user)
     exchange = Exchange()
 
-    user.buy(exchange,portfolio)
+    user.buy(exchange,portfolio,orderbook)
     portfolio.overview()
+    orderbook.orders()
 
+    user.sell(exchange, portfolio, orderbook)
+    portfolio.overview()
+    orderbook.orders()
 
 
 if __name__ == "__main__":
