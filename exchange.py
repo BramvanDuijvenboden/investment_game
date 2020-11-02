@@ -9,7 +9,7 @@ class Exchange:
         stocks = {'Microsoft Corp' : 'MSFT'}
 
         print(stocks.keys())
-        return 'MSFT' #temporary hard coded to prevent having to give input
+        return 'AAPL' #temporary hard coded to prevent having to give input
         # choice = input("Choose a company:")
         # try:
         #     choice in stocks.keys()
@@ -21,7 +21,7 @@ class Exchange:
 
     def stock_price(self,stock):
         response = requests.get(
-            "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="+stock+"&interval=5min&outputsize=full&apikey=demo")
+            "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="+stock+"&interval=5min&outputsize=full&apikey=JT6K3CZJG0VVJQTR")
         if response.status_code != 200:
             raise ValueError("Could not retrieve data, code:", response.status_code)
         raw_data = response.json()

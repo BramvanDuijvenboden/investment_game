@@ -29,7 +29,8 @@ class User:
                 else:
 
                     portfolio.holdings[stock]= {'quantity': quantity, 'costprice':price * quantity}
-                orderbook.transactions.append({'timestamp':pd.Timestamp.now(),'stock':stock,'price':price, 'price timestamp':price_info.name,'quantity':quantity,'buy/sell':"Buy"})
+                orderbook.transactions.append({'timestamp':pd.Timestamp.now(),'stock':stock,'price':price,
+                                               'price timestamp':price_info.name,'quantity':quantity,'buy/sell':"Buy"})
                 print("you have bought", quantity, stock, "shares, at a price of", price, ", with a total amount of",
                       price * quantity, ". The stock is added to your portfolio. Your current balance is $",
                       str(self.balance))
