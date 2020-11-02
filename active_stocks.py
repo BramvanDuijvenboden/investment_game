@@ -14,7 +14,6 @@ class Listings:
 
     def choose_company(self):
         while True:
-            print("error is here")
             search_results = self.find_company()
             print("Your search had ", str(len(search_results)), 'results: \n', search_results)
             choice = int(
