@@ -14,7 +14,7 @@ class User:
         buy = input(("Would you like to buy", stock, "at", price, "per share? (Y/N)")).upper()
         if buy=="Y":
             try:
-                quantity = int(input("How many share would you like to buy?"))
+                quantity = int(input("How many shares would you like to buy?"))
             except:
                 print("That is not a whole number")
             if price*quantity > self.balance:
