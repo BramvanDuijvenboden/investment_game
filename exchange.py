@@ -1,4 +1,5 @@
 import requests, pandas as pd, itertools
+from active_stocks import Listings
 
 class Exchange:
     def __init__(self):
@@ -6,16 +7,8 @@ class Exchange:
         print("Welcome at %s" %self.name)
 
     def available_stocks(self):
-        stocks = {'Microsoft Corp' : 'MSFT'}
-
-        print(stocks.keys())
-        return 'AAPL' #temporary hard coded to prevent having to give input
-        # choice = input("Choose a company:")
-        # try:
-        #     choice in stocks.keys()
-        #     return stocks[choice]
-        # except:
-        #     print("Stock not available")
+        listings = Listings()
+        return listings.get_symbol()
 
 
 
