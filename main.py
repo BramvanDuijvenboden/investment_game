@@ -15,16 +15,16 @@ def main():
     orderbook=Orderbook(user)
     exchange = Exchange()
     while True:
-        action = input("What do you want to do? (buy, sell, quit, show orderbook, show portfolio):")
-        if action == 'buy':
+        action = int(input("What do you want to do? Press 1 to buy, 2 to sell, 3 to quit, 4 to show orderbook, 5 to show portfolio:"))
+        if action == 1:
             user.buy(exchange,portfolio,orderbook)
-        elif action == 'sell':
+        elif action == 2:
             user.sell(exchange, portfolio, orderbook)
-        elif action == "show orderbook":
+        elif action == 3:
             orderbook.orders()
-        elif action == "show portfolio":
+        elif action == 4:
             portfolio.overview()
-        elif action == 'quit':
+        elif action == 5:
             sys.exit()
 
         else:
