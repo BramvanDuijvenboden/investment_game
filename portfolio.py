@@ -10,6 +10,9 @@ class Portfolio:
 
     def overview(self):
         for holding in self.holdings:
-            print("You hold", self.holdings[holding], "shares in", holding)
+            print("You hold", self.holdings[holding]['quantity'], "shares in", holding, '. Bought for an average price of', self.holdings[holding]['costprice']/self.holdings[holding]['quantity'])
+
+    def average_costprice(self,holding):
+        return self.holdings[holding]['costprice']/self.holdings[holding]['quantity']
 
 

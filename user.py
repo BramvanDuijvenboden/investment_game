@@ -24,9 +24,11 @@ class User:
             else:
                 self.balance -= price*quantity
                 if stock in portfolio.holdings:
-                    portfolio.holdings[stock] += quantity
+                    portfolio.holdings[stock]['quantity'] += quantity
+                    portfolio.holdings[stock]['costprice'] += price*quantity
                 else:
-                    portfolio.holdings[stock] = quantity
+
+                    portfolio.holdings[stock]= {'quantity': quantity, 'costprice':price * quantity}
                 orderbook.transactions.append({'timestamp':pd.Timestamp.now(),'stock':stock,'price':price, 'price timestamp':price_info.name,'quantity':quantity,'buy/sell':"Buy"})
                 print("you have bought", quantity, stock, "shares, at a price of", price, ", with a total amount of",
                       price * quantity, ". The stock is added to your portfolio. Your current balance is $",
@@ -45,11 +47,13 @@ class User:
                 quantity = 60  # int(input("How many shares would you like to sell?"))
             except:
                 print("That is not a whole number")
-            if quantity > portfolio.holdings[stock]:
+            if quantity > portfolio.holdings[stock]['quantity']:
                 print("You do not have enough shares to sell")
             else:
                 self.balance += price * quantity
-                portfolio.holdings[stock] -= quantity
+                portfolio.holdings[stock]['costprice'] -= quantity * portfolio.average_costprice(stock)
+                portfolio.holdings[stock]['quantity'] -= quantity
+
                 orderbook.transactions.append({'timestamp': pd.Timestamp.now(), 'stock': stock, 'price': price,
                                                'price timestamp': price_info.name, 'quantity': quantity,
                                                'buy/sell': "Sell"})
@@ -57,4 +61,4 @@ class User:
                       price * quantity, ". The shares are removed from your portfolio. Your current balance is $",
                       str(self.balance))
         else:
-            print("You are not buying")
+            print("You are not selling")
