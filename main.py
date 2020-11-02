@@ -15,7 +15,7 @@ def main():
     orderbook=Orderbook(user)
     exchange = Exchange()
     while True:
-        action = int(input("What do you want to do? Press 1 to buy, 2 to sell, 3 to quit, 4 to show orderbook, 5 to show portfolio:"))
+        action = int(input("What do you want to do? Press 1 to buy, 2 to sell, 3 to show orderbook, 4 to show portfolio, 5 to quit:"))
         if action == 1:
             user.buy(exchange,portfolio,orderbook)
         elif action == 2:
@@ -26,7 +26,6 @@ def main():
             portfolio.overview()
         elif action == 5:
             sys.exit()
-
         else:
             print("Choose something else")
 

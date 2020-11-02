@@ -2,7 +2,6 @@ import requests, pandas as pd, itertools
 
 def alphavantage_data(stock):
     url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="+stock.strip()+"&interval=5min&outputsize=full&apikey=JT6K3CZJG0VVJQTR"
-    print(url)
     response = requests.get(url)
     if response.status_code != 200:
         raise ValueError("Could not retrieve data, code:", response.status_code)
